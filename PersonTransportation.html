@@ -80,37 +80,37 @@
 							<div class="app-info">
 								<div class="single-info">
 									<div class="icon-style color-1">
-										<h2>Vehicle Rentals</h2>
+										<h2 class="deliveryType">Vehicle Rentals</h2>
 									</div>
-									<h4>(With Driver)</h4>
-                  <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
+									<h4 class="deliveryDescription">(With Driver)</h4>
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                 </button>
 								</div>
 								<div class="single-info">
 									<div class="icon-style color-2">
-										<h2>Vehicle Rentals</h2>
+										<h2 class="deliveryType">Vehicle Rentals</h2>
 									</div>
-									<h4>Self-Drive</h4>
-                  <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
+									<h4 class="deliveryDescription">Self-Drive</h4>
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                 </button>
 								</div>
 								<div class="single-info">
 									<div class="icon-style color-3">
-										<h2>Shuttle</h2>
+										<h2 class="deliveryType">Shuttle</h2>
 									</div>
-									<h4>Shuttle/Commute</h4>
-                  <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
+									<h4 class="deliveryDescription">Shuttle/Commute</h4>
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                 </button>
 								</div>
                 <div class="single-info">
 									<div class="icon-style color-2">
-										<h2>Drivers</h2>
+										<h2 class="deliveryType">Drivers</h2>
 									</div>
-									<h4>Hire Driver</h4>
-                  <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
+									<h4 class="deliveryDescription">Hire Driver</h4>
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                 </button>
 								</div>
@@ -118,8 +118,8 @@
 									<div class="icon-style color-2">
 										<h2>Interstate/Intrastate</h2>
 									</div>
-									<h4>Book Interstate/Intrastate Transportation</h4>
-                  <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
+									<h4 class="deliveryDescription">Book Interstate/Intrastate Transportation</h4>
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal">
                     Book Now
                 </button>
 								</div>
@@ -135,6 +135,52 @@
 				</div>
 			</div>
 		</section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="bookingModal2" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel">Book Delivery</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="bookingForm">
+              <div class="mb-3">
+                <label for="deliveryTypeField" class="form-label">Delivery Type</label>
+                <input type="text" class="form-control" id="deliveryTypeField" readonly>
+              </div>
+              <div class="mb-3">
+                <label for="deliveryDescriptionField" class="form-label">Delivery Description</label>
+                <input type="text" class="form-control" id="deliveryDescriptionField" readonly>
+              </div>
+              <div class="mb-3">
+                <label for="customerName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="customerName" required>
+              </div>
+              <div class="mb-3">
+                <label for="customerEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="customerEmail" required>
+              </div>
+              <div class="mb-3">
+                <label for="deliveryAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="deliveryAddress" required>
+              </div>
+              <div class="mb-3">
+                <label for="gpsLocation" class="form-label">GPS Location</label>
+                <input type="text" class="form-control" id="gpsLocation" placeholder="Fetching location..." readonly>
+              </div>
+              <div class="mb-3">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="text" class="form-control" id="contactNumber" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
      <!-- Confirmation Modal -->
      <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
@@ -177,6 +223,6 @@ Contact for bookings - <i class="lni lni-whatsapp"></i> 8247726967, 4035689580
         <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
+        <script src="./javascript/bookingForm.js"></script>
 </body>
 </html>
