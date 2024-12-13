@@ -15,54 +15,7 @@
 </head>
 <body>
        <!-- ========================= header start ========================= -->
-<header class="header">
-    <div class="navbar-area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="index.html">
-                <img src="assets/img/logo/TItle.png" alt="Logo" />
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a href="/index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/services.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/Business.html">Business</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/Contactus.html">Contact us</a>
-                  </li>
-				  <li class="nav-item">
-                    <a href="/Query.html">Query</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/Feedback.html">Feedback</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- navbar collapse -->
-            </nav>
-            <!-- navbar -->
-          </div>
-        </div>
-        <!-- row -->
-      </div>
-      <!-- container -->
-    </div>
-    <!-- navbar area -->
-  </header>
+       <div id="header"></div>
     <!-- ========================= header end ========================= -->
     <!-- ========================= search-section start ========================= -->
 		<section class="search-section pt-150">
@@ -224,5 +177,15 @@ Contact for bookings - <i class="lni lni-whatsapp"></i> 8247726967, 4035689580
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
         <script src="./javascript/bookingForm.js"></script>
+
+        <script>
+          // Load header.html into the div with id="header"
+          fetch("Head.html")
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById("header").innerHTML = data;
+            })
+            .catch(err => console.error("Error loading header:", err));
+        </script>
 </body>
 </html>
