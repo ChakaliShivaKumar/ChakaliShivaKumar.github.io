@@ -7,13 +7,13 @@ const app = express();
 const PORT = 3000;
 
 //MongoDB Connection
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const mongoURI = "mongodb+srv://schakali:capshiv@zero.p0pkj.mongodb.net/?retryWrites=true&w=majority&appName=Zero";
+// const mongoURI = "mongodb+srv://schakali:capshiv@zero.p0pkj.mongodb.net/?retryWrites=true&w=majority&appName=Zero";
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(err => console.error("MongoDB connection error:", err));
+// mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log("Connected to MongoDB"))
+//   .catch(err => console.error("MongoDB connection error:", err));
 
 
 
