@@ -85,6 +85,6 @@ app.post("/send-email", (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen("3000", () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
