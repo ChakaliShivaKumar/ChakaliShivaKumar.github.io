@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://kit.fontawesome.com/280f13f5cc.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Section: Design Block -->
@@ -107,6 +109,17 @@
     </div>
     <!-- Jumbotron -->
   </section>
+  <div id="footer"></div>
+    <script>
+        // Load header.html into the div with id="header"
+        fetch("footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          })
+          .catch(err => console.error("Error loading header:", err));
+          
+      </script>
   <!-- Section: Design Block -->
 </body>
 </html>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P Transportation</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg"/>
+    <script src="https://kit.fontawesome.com/280f13f5cc.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- ========================= CSS here ========================= -->
@@ -164,14 +166,17 @@ Contact for bookings - <i class="lni lni-whatsapp"></i> 8247726967, 4035689580
         </div>
     </div>
 		<!-- ========================= search-section end ========================= -->
-        <footer class="bg-dark text-white text-center py-4">
-            <p>© 2024 LEZIT Group. All Rights Reserved.</p>
-            <p>Follow us on:
-                <a href="#" class="text-white">LinkedIn</a> |
-                <a href="#" class="text-white">Facebook</a> |
-                <a href="#" class="text-white">Instagram</a>
-            </p>
-        </footer>
+    <div id="footer"></div>
+    <script>
+        // Load header.html into the div with id="header"
+        fetch("footer.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("footer").innerHTML = data;
+          })
+          .catch(err => console.error("Error loading header:", err));
+          
+      </script>
 
         <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

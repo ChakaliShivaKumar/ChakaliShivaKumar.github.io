@@ -4,9 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>LEZIT</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- ========================= CSS here ========================= -->
@@ -14,19 +18,22 @@
     <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://kit.fontawesome.com/280f13f5cc.js" crossorigin="anonymous"></script>
+
+    
+
     <script>
-      window.watsonAssistantChatOptions = {
-        integrationID: "f032943e-1990-4220-b67a-dcf30bbd4afd", // The ID of this integration.
-        region: "eu-gb", // The region your integration is hosted in.
-        serviceInstanceID: "b190ce30-d95f-4bef-bc56-02875d4038f8", // The ID of your service instance.
-        onLoad: async (instance) => { await instance.render(); }
-      };
-      setTimeout(function(){
-        const t=document.createElement('script');
-        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-        document.head.appendChild(t);
-      });
-    </script>
+      window.embeddedChatbotConfig = {
+      chatbotId: "KPIsVnlalxqCsVN4qVYKZ",
+      domain: "www.chatbase.co"
+      }
+      </script>
+      <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="KPIsVnlalxqCsVN4qVYKZ"
+      domain="www.chatbase.co"
+      defer>
+      </script>
   </head>
   <body>
     <!-- ========================= preloader start ========================= -->
@@ -59,20 +66,21 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="hero-content">
-              <h1 class="wow fadeInUp mb-0" data-wow-delay=".2s">
-				LEZIT TRANSPORTS
+              <h1 class="wow fadeInUp pl-3 mb-0" data-wow-delay=".2s">
+				        LEZIT TRANSPORTS
 							</h1>
               <p class="wow fadeInUp text-lg-right mb-0" data-wow-delay=".4s">
                 a transportation hub…
-			</p>
-			<p class="wow fadeInUp text-lg-right" data-wow-delay=".4s">
-				One stop solution for all your transportation purposes
-			</p>
+			        </p>
+			
               <div class="hero-btns">
 								<!-- <a href="https://rebrand.ly/appgrids-gg/" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Purchase Now</a>
 								<a href="https://rebrand.ly/appgrids-gg/" class="main-btn border-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Learn More</a> -->
 							</div>
             </div>
+            <p class="wow fadeInUp pl-3 mt-2" data-wow-delay=".4s">
+              One stop solution for all your transportation purposes
+            </p>
 					</div>
 					<div class="col-lg-6">
 						<div class="hero-img wow fadeInUp" data-wow-delay=".5s">
@@ -85,14 +93,8 @@
 		<!-- ========================= hero-section end ========================= -->
 
     <!-- ========================= footer start ========================= -->
-	<footer class="bg-dark text-white text-center py-4">
-        <p>© 2024 LEZIT Group. All Rights Reserved.</p>
-        <p>Follow us on:
-            <a href="#" class="text-white">LinkedIn</a> |
-            <a href="#" class="text-white">Facebook</a> |
-            <a href="#" class="text-white">Instagram</a>
-        </p>
-    </footer>
+    <div id="footer"></div>
+  
     <!-- ========================= JS here ========================= -->
     <script src="assets/js/bootstrap.5.0.0.alpha-2-min.js"></script>
     <script src="assets/js/count-up.min.js"></script>
@@ -105,6 +107,14 @@
         .then(response => response.text())
         .then(data => {
           document.getElementById("header").innerHTML = data;
+        })
+        .catch(err => console.error("Error loading header:", err));
+
+        // Load footer.html into the div with id="header"
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer").innerHTML = data;
         })
         .catch(err => console.error("Error loading header:", err));
     </script>
