@@ -15,45 +15,47 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
        <!-- ========================= header start ========================= -->
        <div id="header"></div>
     <!-- ========================= header end ========================= -->
    <!-- ========================= counter-up-section start ========================= -->
+   <main class="flex-grow">
 		<section class="counter-up-section pt-150">
 			<div class="counter-shape">
 				<img src="assets/img/count-up/counter-shape.svg" alt="" class="shape shape-1">
 			</div>
-			<div class="container">
+			<div class="container mr-lg-2 ">
 				<div class="row align-items-center">
-					<div class="col-xl-7 col-lg-6">
+					<!-- <div class="col-xl-7 col-lg-6">
 						<div class="counter-up-img">
 							<img src="assets/img/count-up/count-up-img.png" alt="">
 						</div>
-					</div>
+					</div> -->
 
-					<div class="col-xl-5 col-lg-6">
+					<div class="col-xl-12 col-lg-6">
 						<div class="search-content">
-							<div class="section-title mb-40">
+							<div class="section-title text-center mb-40">
 								<h1 class="mb-40 wow fadeInUp" data-wow-delay=".2s">Goods Transportation</h1>
 								<p class="wow fadeInUp" data-wow-delay=".4s"></p>
 							</div>
-							<div class="app-info">
-                <div class="single-info">
+							<div class="app-info row">
+                <div class="single-info col-lg-5">
                   <div class="icon-style color-2">
                     <h2 class="deliveryType">Logistics</h2>
                   </div>
-                  <h4 class="deliveryDescription">Seamless Shipping</h4>
+                  <p class="deliveryDescription">Book a transport vehicle for the purpose of transporting goods from one manufacturer/retailer/wholesaler/supplier to other manufacturer/retailer/wholesaler/supplier, terms & conditions applied
+                  </p>
                   <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                   </button>
                 </div>
 								
-								<div class="single-info">
+								<div class="single-info col-lg-5">
                   <div class="icon-style color-2">
                     <h2 class="deliveryType">Order Delivery</h2>
                   </div>
-                  <h4 class="deliveryDescription">Delivery Request</h4>
+                  <p class="deliveryDescription">Book a transport vehicle if you have any goods order to be delivered from one location to other.</p>
                   <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                   </button>
@@ -113,8 +115,9 @@
 				</div>
 			</div>
 		</section>
+    </main>
 		<!-- ========================= counter-up-section end ========================= -->
-    <div id="footer"></div>
+    <div id="footer" class="mt-auto"></div>
     <script>
         // Load header.html into the div with id="header"
         fetch("footer.html")

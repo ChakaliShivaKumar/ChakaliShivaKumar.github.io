@@ -1715,16 +1715,14 @@ p {
 .search-content .app-info {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
 }
 
 .search-content .app-info .single-info {
   text-align: center;
   border-radius: 18px;
   background: #fff;
-  padding: 40px 10px;
-  flex: 1;
-  width: 100%;
+  padding: 30px 10px;
   margin-right: 30px;
   margin-bottom: 40px;
   box-shadow: 0px 14px 27px rgba(177, 185, 210, 0.16);

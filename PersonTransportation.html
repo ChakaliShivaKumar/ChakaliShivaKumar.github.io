@@ -15,81 +15,93 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
        <!-- ========================= header start ========================= -->
        <div id="header"></div>
     <!-- ========================= header end ========================= -->
     <!-- ========================= search-section start ========================= -->
+    <main class="flex-grow">
 		<section class="search-section pt-150">
 			<div class="search-shape">
 				<img src="assets/img/search/search-shape.svg" alt="" class="shape shape-1">
 			</div>
-			<div class="container">
+			<div class="container mr-lg-2">
 				<div class="row align-items-center">
-					<div class="col-xl-5 col-lg-6 order-last order-lg-first">
+					<div class="col-xl-12 col-lg-6 order-last order-lg-first">
 						<div class="search-content">
 							<div class="section-title mb-40">
-								<h1 class="mb-40 wow fadeInUp" data-wow-delay=".2s">Person Transportation</h1>
+								<h1 class="mb-40 wow text-center fadeInUp" data-wow-delay=".2s">Person Transportation</h1>
 								<p class="wow fadeInUp" data-wow-delay=".4s"></p>
 							</div>
-							<div class="app-info">
-								<div class="single-info">
+							<div class="app-info row">
+								<div class="single-info col-lg-5">
 									<div class="icon-style color-1">
-										<h2 class="deliveryType">Vehicle Rentals</h2>
+										<h2 class="deliveryType">Vehicle Rentals-(With Driver)</h2>
 									</div>
-									<h4 class="deliveryDescription">(With Driver)</h4>
+									<p class="deliveryDescription">Rent a vehicle for travelling long distances such as villages, tourist places, temples, long drives, other cities, towns etc (Including with driver from service provider), terms & conditions applied.
+                  </p>
                   <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                 </button>
 								</div>
-								<div class="single-info">
+								<div class="single-info col-lg-5">
 									<div class="icon-style color-2">
-										<h2 class="deliveryType">Vehicle Rentals</h2>
+										<h2 class="deliveryType">Vehicle Rentals-(Self-Drive)</h2>
 									</div>
-									<h4 class="deliveryDescription">Self-Drive</h4>
+									<p class="deliveryDescription">Rent a vehicle for travelling long distances such as villages, tourist places, temples, long drives, other cities, towns etc (Driver is not included), terms & conditions applied.</p>
                   <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                 </button>
 								</div>
-								<div class="single-info">
+								<div class="single-info col-lg-5">
 									<div class="icon-style color-3">
 										<h2 class="deliveryType">Shuttle</h2>
 									</div>
-									<h4 class="deliveryDescription">Shuttle/Commute</h4>
+									<p class="deliveryDescription">Book a vehicle for people travelling regularly from one place (usually home, railway station, bus station, metro station, airports etc) to other places such as work places (educational institution, offices, companies, organisations, any other public places etc), terms & conditions applied.</p>
                   <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                 </button>
 								</div>
-                <div class="single-info">
+                <div class="single-info col-lg-5">
 									<div class="icon-style color-2">
 										<h2 class="deliveryType">Drivers</h2>
 									</div>
-									<h4 class="deliveryDescription">Hire Driver</h4>
+									<p class="deliveryDescription">Book drivers for your travel when you don’t have anyone to drive your vehicle, terms & conditions applied.</p>
                   <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
                     Book Now
                 </button>
 								</div>
-                                <div class="single-info">
+                <div class="single-info col-lg-5">
 									<div class="icon-style color-2">
-										<h2>Interstate/Intrastate</h2>
+										<h2>Interstate transportation</h2>
 									</div>
-									<h4 class="deliveryDescription">Book Interstate/Intrastate Transportation</h4>
+									<p class="deliveryDescription">Book a ride for any place which is outside your own state (one way trip), terms & conditions applied.</p>
                   <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal">
                     Book Now
-                </button>
+                  </button>
+								</div>
+                <div class="single-info col-lg-5">
+									<div class="icon-style color-2">
+										<h2>Intrastate transportation</h2>
+									</div>
+									<p class="deliveryDescription">Book a ride for any place within your own state (one way trip), terms & conditions applied.</p>
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                    Book Now
+                  </button>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="col-xl-7 col-lg-6">
+					<!-- <div class="col-xl-7 col-lg-6">
 						<div class="search-img text-lg-right">
 							<img src="assets/img/search/search-img.png" alt="">
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>
+    </main>
 
     <!-- Modal -->
     <div class="modal fade" id="bookingModal2" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">

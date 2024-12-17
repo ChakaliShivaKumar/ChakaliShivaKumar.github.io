@@ -16,37 +16,47 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     
 </head>
-<body>
-    <!-- ========================= header start ========================= -->
-    <div id="header"></div>
-    <!-- ========================= header end ========================= -->
-    <section id="testimonial" class="testimonial-section">
-        <div class="container text-center">
-        <h1>Team</h1>
-        <p>Team</p></br>
-        </div>
-    </section>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 
-    <section class="py-5">
-        <div class="container">
-            <div class="text-center mb-4">
-                <h2>Team</h2>
+    <!-- Title Bar -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="container flex-grow">
+        <!-- Page Heading -->
+        <section class="text-center pt-140">
+            <h2 class="text-4xl font-semibold">Contact Us</h2>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="flex justify-center pt-40">
+            <div class="w-full md:w-2/3 lg:w-1/2 bg-white shadow-md rounded-lg p-8">
+                <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                <ul class="space-y-4 text-lg list-disc pl-6">
+                    <li>
+                        <strong>Contact Numbers:</strong> 
+                        <span class="block text-gray-600">8247726967, 4035689580</span>
+                    </li>
+                    <li>
+                        <strong>Email ID:</strong> 
+                        <a href="mailto:satishavula0408@outlook.com" class="text-blue-600 hover:underline">
+                            satishavula0408@outlook.com
+                        </a>
+                    </li>
+                    <li>
+                        <strong>Office Working Hours:</strong> 
+                        <span class="block text-gray-600">9 AM to 8 PM (Monday to Saturday)</span>
+                    </li>
+                    <li>
+                        <strong>Online Hours:</strong> 
+                        <span class="block text-gray-600">24/7 Anytime</span>
+                    </li>
+                </ul>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-4 text-center">
-                    <img style="height: 40%;" src="assets\img\hero\profile_pic.png" class="rounded-circle mb-3" alt="Managing Director">
-                    <h5>Avula Satish</h5>
-                    <p>Founder & Managing Director</p>
-                </div>
-                <div class="col-md-4 text-center">
-                  <img style="height: 40%;" src="assets\img\hero\AvulaAnjaneyulu.png" class="rounded-circle mb-3" alt="Managing Director">
-                  <h5>Avula Anjaneyulu</h5>
-                  <p>Managing Director</p>
-              </div>
-            </div>
-        </div>
-    </section>
-    <div id="footer"></div>
+        </section>
+    </main>
+
+    <div id="footer" class="mt-auto"></div>
     <script>
         // Load header.html into the div with id="header"
         fetch("footer.html")
@@ -57,7 +67,6 @@
           .catch(err => console.error("Error loading header:", err));
           
       </script>
-
     <script>
       // Load header.html into the div with id="header"
       fetch("Head.html")
