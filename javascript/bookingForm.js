@@ -13,11 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Traverse to the nearest parent with the class "single-info"
         const singleInfoDiv = event.target.closest(".single-info");
   
-        // Find the delivery type within this parent
         const deliveryType = singleInfoDiv.querySelector(".deliveryType").textContent.trim();
         
         const deliveryDescription = singleInfoDiv.querySelector(".deliveryDescription").textContent.trim();
-        // Set the delivery type in the modal's input field
+        
         deliveryTypeField.value = deliveryType;
         deliveryDescriptionField.value = deliveryDescription;
 

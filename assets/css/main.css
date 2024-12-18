@@ -1665,7 +1665,7 @@ p {
 
 .icon-style {
   display: flex;
-  height: 70px;
+  height: 100px;
   justify-content: center;
   align-items: center;
   border-radius: 18px;
