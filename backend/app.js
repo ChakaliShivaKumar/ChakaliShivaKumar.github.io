@@ -32,7 +32,19 @@ const transporter = nodemailer.createTransport({
 
 // API endpoint for sending emails
 app.post("/send-email", (req, res) => {
-  const { type, description, name, email, address, location, contact } = req.body;
+  const {
+    type,
+    name,
+    contact,
+    email,
+    pickupDate,
+    pickupTime,
+    dropDate,
+    dropTime,
+    persons,
+    address,
+  } = req.body;
+
 
   const adminMailOptions = {
     from: "capshiv51@gmail.com",
@@ -41,11 +53,13 @@ app.post("/send-email", (req, res) => {
     text: `
       A new booking has been made:
       - Name: ${name}
-      - Description: ${description}
-      - Email: ${email}
+      - Booking Type: ${type}
+      - Pickup Date & Time: ${pickupDate} at ${pickupTime}
+      - Drop Date & Time: ${dropDate} at ${dropTime}
+      - No. of Persons: ${persons}
       - Address: ${address}
-      - GPS Location: ${location}
       - Contact Number: ${contact}
+      - Email: ${email || "Not Provided"}
     `,
   };
 
@@ -58,9 +72,10 @@ app.post("/send-email", (req, res) => {
       
       Thank you for your booking!
       - Booking Type: ${type}
-      - Description: ${description}
+      - Pickup Date & Time: ${pickupDate} at ${pickupTime}
+      - Drop Date & Time: ${dropDate} at ${dropTime}
+      - No. of Persons: ${persons}
       - Address: ${address}
-      - GPS Location: ${location}
       - Contact Number: ${contact}
       
       We will process your request shortly.

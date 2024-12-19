@@ -27,46 +27,79 @@
             <div class="col-xxl-5 col-xl-6 col-lg-7">
                 <div class="section-title text-center mb-30">
                     <h1 class="mb-25 wow fadeInUp" data-wow-delay=".2s">Services</h1>
-                    <p class="wow fadeInUp" data-wow-delay=".4s"></p>
                 </div>
             </div>
         </div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h2 class="mb-4">Feedback</h2>
-                <form>
-                    <!-- Full Name -->
-                    <div class="mb-3">
-                        <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
-                    </div>
-                    
-                    <!-- Email Address -->
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
-                    </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2 class="mb-4">Feedback</h2>
+                    <form id="queryForm">
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <!-- Email Address -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+                        </div>
 
-                    <!-- Mobile Number (Optional) -->
-                    <div class="mb-3">
-                        <label for="mobile" class="form-label">Mobile Number (Optional)</label>
-                        <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number">
-                    </div>
+                        <!-- Mobile Number -->
+                        <div class="mb-3">
+                            <label for="mobile" class="form-label">Mobile Number</label>
+                            <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number">
+                        </div>
 
-                    <!-- Query -->
-                    <div class="mb-3">
-                        <label for="query" class="form-label">Your Feedback</label>
-                        <textarea class="form-control" id="query" rows="5" placeholder="Enter your feedback" required></textarea>
-                    </div>
+                        <!-- Place -->
+                        <div class="mb-3">
+                            <label for="place" class="form-label">Place (Optional)</label>
+                            <input type="text" class="form-control" id="place" placeholder="Enter Area/Town/Village/City/District/State">
+                        </div>
 
-                    <!-- Submit Button -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                        <!-- Transportation Type -->
+                        <div class="mb-3">
+                            <label for="transportationType" class="form-label">Transportation Type</label>
+                            <select class="form-select" id="transportationType" required>
+                                <option value="">Select Transportation Type</option>
+                                <option value="Person">Person</option>
+                                <option value="Goods">Goods</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Service Type -->
+                        <div class="mb-3">
+                            <label for="serviceType" class="form-label">Service Type</label>
+                            <select class="form-select" id="serviceType" required>
+                                <option value="">Select Service Type</option>
+                                <option value="Vehicle rentals">Vehicle rentals</option>
+                                <option value="Intrastate/Interstate transportation">Intrastate/Interstate transportation</option>
+                                <option value="Shuttle/commute transportation">Shuttle/commute transportation</option>
+                                <option value="Drivers">Drivers</option>
+                                <option value="Logistics">Logistics</option>
+                                <option value="Order delivery">Order delivery</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Query -->
+                        <div class="mb-3">
+                            <label for="query" class="form-label">Your Feedback</label>
+                            <textarea class="form-control" id="query" rows="5" placeholder="Enter your query" required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">Submit Query</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 <div id="footer"></div>
     <script>
         // Load header.html into the div with id="header"
