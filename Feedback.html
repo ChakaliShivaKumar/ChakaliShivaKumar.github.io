@@ -18,9 +18,9 @@
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
-  <div id="header"></div>
-  
-<!-- Query Form Section -->
+    <div id="header"></div>
+
+    <!-- feedback Form Section -->
 <section class="py-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -33,8 +33,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <h2 class="mb-4">Feedback</h2>
-                    <form id="queryForm">
+                    <h2 class="mb-4">Feedback Details</h2>
+                    <form id="feedbackForm">
                         <!-- Full Name -->
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Full Name</label>
@@ -47,16 +47,16 @@
                             <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
                         </div>
 
-                        <!-- Mobile Number -->
+                        <!-- Mobile Number (Optional) -->
                         <div class="mb-3">
-                            <label for="mobile" class="form-label">Mobile Number</label>
+                            <label for="mobile" class="form-label">Mobile Number </label>
                             <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number">
                         </div>
 
                         <!-- Place -->
                         <div class="mb-3">
-                            <label for="place" class="form-label">Place (Optional)</label>
-                            <input type="text" class="form-control" id="place" placeholder="Enter Area/Town/Village/City/District/State">
+                            <label for="place" class="form-label">Place</label>
+                            <input type="text" class="form-control" id="place" placeholder="Enter Area/Town/Village/City/District/State" required>
                         </div>
 
                         <!-- Transportation Type -->
@@ -85,14 +85,14 @@
                             </select>
                         </div>
 
-                        <!-- Query -->
+                        <!-- feedback -->
                         <div class="mb-3">
-                            <label for="query" class="form-label">Your Feedback</label>
-                            <textarea class="form-control" id="query" rows="5" placeholder="Enter your query" required></textarea>
+                            <label for="feedback" class="form-label">Your feedback</label>
+                            <textarea class="form-control" id="feedback" rows="5" placeholder="Enter your feedback" required></textarea>
                         </div>
 
                         <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary">Submit Query</button>
+                        <button type="submit" class="btn btn-primary">Submit feedback</button>
                     </form>
                 </div>
             </div>
@@ -100,7 +100,27 @@
     </div>
 </section>
 
-<div id="footer"></div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal1" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirm Submission</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to submit your feedback?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmSubmit">Confirm</button>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div id="footer"></div>
     <script>
         // Load header.html into the div with id="header"
         fetch("footer.html")
@@ -111,15 +131,31 @@
           .catch(err => console.error("Error loading header:", err));
           
       </script>
+        
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('confirmSubmit').addEventListener('click', function() {
+            // Here, you can handle form submission
+            const form = document.getElementById('feedbackForm');
+            alert('feedback submitted successfully!');
+            form.reset(); // Reset the form after submission
+            const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+            modal.hide(); // Hide the modal
+        });
+    </script>
 
 <script>
-  // Load header.html into the div with id="header"
-  fetch("Head.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    })
-    .catch(err => console.error("Error loading header:", err));
-</script>
+    // Load header.html into the div with id="header"
+    fetch("Head.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      })
+      .catch(err => console.error("Error loading header:", err));
+  </script>
+  <script src="./javascript/feedbackForm.js"></script>
 </body>
 </html>

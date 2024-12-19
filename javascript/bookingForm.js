@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("bookingModal1");
   const deliveryTypeField = document.getElementById("deliveryTypeField");
-  const deliveryDescriptionField = document.getElementById("deliveryDescriptionField");
   const bookingForm = document.getElementById("bookingForm");
 
   // Add event listeners to all "Book Now" buttons
