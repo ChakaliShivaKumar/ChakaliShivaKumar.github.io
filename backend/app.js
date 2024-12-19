@@ -47,8 +47,8 @@ app.post("/send-email", (req, res) => {
 
 
   const adminMailOptions = {
-    from: "capshiv51@gmail.com",
-    to: "capshiv51@gmail.com", // Replace with admin's email
+    from: "satishavula0408@outlook.com",
+    to: "satishavula0408@outlook.com", // Replace with admin's email
     subject: `New Booking: ${type}`,
     text: `
       A new booking has been made:
@@ -64,7 +64,7 @@ app.post("/send-email", (req, res) => {
   };
 
   const customerMailOptions = {
-    from: "capshiv51@gmail.com",
+    from: "satishavula0408@outlook.com",
     to: email,
     subject: "Booking Confirmation",
     text: `

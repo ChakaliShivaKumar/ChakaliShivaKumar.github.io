@@ -25,8 +25,8 @@ app.post("/send-query", (req, res) => {
   
     // Admin email options
     const adminMailOptions = {
-      from: "capshiv51@gmail.com",
-      to: "satishavula0408@gmail.com", 
+      from: "satishavula0408@outlook.com",
+      to: "satishavula0408@outlook.com", 
       subject: `New Query Submission: ${fullName}`,
       text: `
         A new query has been submitted:
@@ -42,7 +42,7 @@ app.post("/send-query", (req, res) => {
 
     // Acknowledgment email for the user
     const customerMailOptions = {
-      from: "capshiv51@gmail.com",
+      from: "satishavula0408@outlook.com",
       to: email,
       subject: "Query Submission Confirmation",
       text: `

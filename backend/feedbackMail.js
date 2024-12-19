@@ -25,8 +25,8 @@ app.post("/send-feedback", (req, res) => {
   
     // Admin email options
     const adminMailOptions = {
-      from: "capshiv51@gmail.com",
-      to: "satishavula0408@gmail.com", 
+      from: "satishavula0408@outlook.com",
+      to: "satishavula0408@outlook.com", 
       subject: `New feedback Submission: ${fullName}`,
       text: `
         A new feedback has been submitted:
@@ -42,7 +42,7 @@ app.post("/send-feedback", (req, res) => {
   
     // Acknowledgment email for the user
     const customerMailOptions = {
-      from: "capshiv51@gmail.com",
+      from: "satishavula0408@outlook.com",
       to: email,
       subject: "feedback Submission Confirmation",
       text: `
