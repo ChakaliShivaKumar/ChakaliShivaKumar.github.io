@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             confirmationModal.hide();
 
             // Mock API endpoint
-            const response = await fetch("http://localhost:3001/send-feedback", {
+            const response = await fetch("https://lezit-feedback.onrender.com/send-feedback", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

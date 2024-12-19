@@ -39,7 +39,7 @@ app.post("/send-query", (req, res) => {
         - Query: ${query}
       `,
     };
-  
+
     // Acknowledgment email for the user
     const customerMailOptions = {
       from: "capshiv51@gmail.com",
