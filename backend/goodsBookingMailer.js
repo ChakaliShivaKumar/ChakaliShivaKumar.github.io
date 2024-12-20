@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3004;
 
 
 // Middleware
@@ -32,6 +32,7 @@ app.post("/send-email", (req, res) => {
     dropDate,
     dropTime,
     persons,
+    weight,
     address,
   } = req.body;
 
@@ -47,6 +48,7 @@ app.post("/send-email", (req, res) => {
       - Pickup Date & Time: ${pickupDate} at ${pickupTime}
       - Drop Date & Time: ${dropDate} at ${dropTime}
       - No. of Persons: ${persons}
+      - Weight : ${weight}
       - Address: ${address}
       - Contact Number: ${contact}
       - Email: ${email || "Not Provided"}
@@ -64,7 +66,8 @@ app.post("/send-email", (req, res) => {
       - Booking Type: ${type}
       - Pickup Date & Time: ${pickupDate} at ${pickupTime}
       - Drop Date & Time: ${dropDate} at ${dropTime}
-      - No. of Persons: ${persons}
+      - No. of Goods: ${persons}
+      - Weight: ${weight}
       - Address: ${address}
       - Contact Number: ${contact}
       
@@ -90,6 +93,6 @@ app.post("/send-email", (req, res) => {
 });
 
 // Start server
-app.listen("3000", () => {
+app.listen("3004", () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

@@ -3,6 +3,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const deliveryTypeField = document.getElementById("deliveryTypeField");
   const bookingForm = document.getElementById("bookingForm");
 
+
+  // Function to round the time to the nearest 15-minute interval
+function roundTimeToNearestInterval(time) {
+  const [hours, minutes] = time.split(":").map(Number);
+
+  // Round minutes to the nearest 15
+  const roundedMinutes = Math.round(minutes / 15) * 15;
+
+  // If rounded minutes = 60, increment the hour by 1 and reset minutes to 00
+  if (roundedMinutes === 60) {
+    return `${hours + 1}:00`;
+  }
+
+  // Ensure two digits for minutes
+  const roundedMinutesStr = String(roundedMinutes).padStart(2, '0');
+  return `${hours}:${roundedMinutesStr}`;
+}
+
+// Listen for changes on the pickupTime input field
+const pickupTimeInput = document.getElementById("pickupTime");
+
+pickupTimeInput.addEventListener("input", function () {
+  const time = pickupTimeInput.value;
+  const roundedTime = roundTimeToNearestInterval(time);
+  
+  // Set the value of the input to the rounded time (to nearest 15-minute interval)
+  pickupTimeInput.value = roundedTime;
+});
+
+// Listen for changes on the pickupTime input field
+const dropTimeInput = document.getElementById("dropTime");
+
+dropTimeInput.addEventListener("input", function () {
+  const time = dropTimeInput.value;
+  const roundedTime = roundTimeToNearestInterval(time);
+  
+  // Set the value of the input to the rounded time (to nearest 15-minute interval)
+  dropTimeInput.value = roundedTime;
+});
+
+
   //Validations for date
   const pickupDateInput = document.getElementById("pickupDate");
   const dropDateInput = document.getElementById("dropDate");
