@@ -54,7 +54,7 @@ app.post("/send-feedback", (req, res) => {
         - feedback: ${feedback}
         
         Regards,
-        LEZIT.
+        LEZIT TRANSPORTS
       `,
     };
   

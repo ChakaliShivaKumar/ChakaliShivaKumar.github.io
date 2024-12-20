@@ -81,7 +81,7 @@ app.post("/send-email", (req, res) => {
       We will process your request shortly.
       
       Regards,
-      LEZIT.
+      LEZIT TRANSPORTS
     `,
   };
 

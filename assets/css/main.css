@@ -1598,6 +1598,14 @@ p {
   }
 }
 
+.centered-div{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 10%;
+}
+
 .feature-section .single-feature .icon {
   width: 114px;
   height: 114px;

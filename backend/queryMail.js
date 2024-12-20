@@ -54,7 +54,7 @@ app.post("/send-query", (req, res) => {
         - Query: ${query}
         
         Regards,
-        LEZIT.
+        LEZIT TRANSPORTS
       `,
     };
   

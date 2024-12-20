@@ -3,6 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const deliveryTypeField = document.getElementById("deliveryTypeField");
   const bookingForm = document.getElementById("bookingForm");
 
+  //Validations for date
+  const pickupDateInput = document.getElementById("pickupDate");
+  const dropDateInput = document.getElementById("dropDate");
+
+  // Ensure the pickup date cannot be before today
+  const today = new Date().toISOString().split("T")[0];
+  pickupDateInput.setAttribute("min", today);
+
+  pickupDateInput.addEventListener("change", () => {
+    // Ensure drop date is after pickup date
+    const pickupDate = pickupDateInput.value;
+    dropDateInput.setAttribute("min", pickupDate);
+  });
+
+  dropDateInput.addEventListener("change", () => {
+    const pickupDate = pickupDateInput.value;
+    const dropDate = dropDateInput.value;
+
+    if (new Date(dropDate) <= new Date(pickupDate)) {
+      alert("Drop date must be after the pickup date.");
+      dropDateInput.value = ""; // Clear invalid date
+    }
+  });
+
+
   // Add event listeners to all "Book Now" buttons
   const buttons = document.querySelectorAll(".openModalButton");
 
