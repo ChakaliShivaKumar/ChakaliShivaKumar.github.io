@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         };
   
-        submitForm("http://localhost:3003/submit-service-provider", formData, serviceProviderForm, "serviceProviderModal");
+        submitForm("https://lezit-business.onrender.com/submit-service-provider", formData, serviceProviderForm, "serviceProviderModal");
 
       });
     }
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         };
   
-        submitForm("http://localhost:3003/submit-vehicle-owner", formData, vehicleOwnerForm, "vehicleOwnerModal");
+        submitForm("https://lezit-business.onrender.com/submit-vehicle-owner", formData, vehicleOwnerForm, "vehicleOwnerModal");
       });
     }
   
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         };
   
-        submitForm("http://localhost:3003/submit-driver", formData, driverForm, "driverModal");
+        submitForm("https://lezit-business.onrender.com/submit-driver", formData, driverForm, "driverModal");
       });
     }
 
