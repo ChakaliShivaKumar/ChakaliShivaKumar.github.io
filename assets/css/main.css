@@ -1239,7 +1239,7 @@ p {
 .navbar-toggler .toggler-icon {
   width: 30px;
   height: 2px;
-  background-color: #1D2A5D;
+  background-color: #5d5a1d;
   display: block;
   margin: 5px 0;
   position: relative;
@@ -1304,7 +1304,7 @@ p {
   .navbar-nav .nav-item a {
     display: inline-block;
     padding: 6px 0px;
-    color: #5E678C;
+    color: #8c845e;
   }
 }
 
