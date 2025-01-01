@@ -28,7 +28,7 @@ const images = [
      carouselItem.className = `carousel-item${index === 0 ? ' active' : ''}`;
      const img = document.createElement('img');
      img.src = imageSrc;
-     img.className = 'd-block w-100';
+
      img.alt = `Slide ${index + 1}`;
      carouselItem.appendChild(img);
      inner.appendChild(carouselItem);
@@ -36,17 +36,17 @@ const images = [
 
    // Custom settings
    const carousel = new bootstrap.Carousel(document.querySelector('#customCarousel'), {
-     interval: 3000, // autoplay speed in milliseconds
+     interval: 10000, // autoplay speed in milliseconds
      wrap: true,    // infinite scrolling
      ride: 'carousel' // autoplay
    });
 
    // Center mode (adjust padding)
    document.querySelectorAll('.carousel-item').forEach(item => {
-     item.style.margin = '0 12%'; // Adjust padding for center mode
+     item.style.margin = '0% 10%'; // Adjust padding for center mode
    });
 
    // Auto-scroll for center mode
    setInterval(() => {
      carousel.next();
-   }, 3000);
+   }, 10000);
