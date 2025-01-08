@@ -39,7 +39,7 @@ const images = [
 
    // Custom settings
    const carousel = new bootstrap.Carousel(document.querySelector('#customCarousel'), {
-     interval: 10000, // autoplay speed in milliseconds
+     interval: 4000, // autoplay speed in milliseconds
      wrap: true,    // infinite scrolling
      ride: 'carousel' // autoplay
    });
@@ -52,4 +52,4 @@ const images = [
    // Auto-scroll for center mode
    setInterval(() => {
      carousel.next();
-   }, 10000);
+   }, 4000);
