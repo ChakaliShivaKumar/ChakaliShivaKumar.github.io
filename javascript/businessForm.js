@@ -81,15 +81,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const driverLicenseElement = document.getElementById("driverLicense");
   
+        // Get all vehicle experience rows
+        const vehicleExperienceElements = document.querySelectorAll('.vehicle-experience');
+
+        // Collect multiple vehicle types and experiences
+        const vehicleExperiences = Array.from(vehicleExperienceElements).map(row => {
+          return {
+            vehicleType: row.querySelector('select[name="vehicleType[]"]').value,
+            drivingExperience: row.querySelector('input[name="vehicleExperience[]"]').value,
+          };
+        });
+
+        // Form Data
         const formData = {
           fullName: document.getElementById("driverFullName").value,
           mobileNo: document.getElementById("driverMobileNo").value,
           email: document.getElementById("driverEmail").value,
           address: document.getElementById("driverAddress").value,
           additionalInfo: {
-            hasTransportLicense: driverLicenseElement ? driverLicenseElement.value : "N/A",
-            drivingExperience: document.getElementById("driverExperience").value,
-            vehicleType: document.getElementById("driverVehicleType").value,
+            hasTransportLicense: document.getElementById("driverLicense").value,
+            vehicleExperiences: vehicleExperiences, // Dynamic vehicle experiences
           },
         };
   

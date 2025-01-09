@@ -37,7 +37,7 @@
          <div class="app-info row">
            <div class="single-info col-lg-12">
              <div class=" color-2">
-               <h3 class="deliveryType">Provider</h3>
+               <h3 class="deliveryType">Service Provider</h3>
              </div>
              <p class="deliveryDescription">Individuals, organizations with vehicles,drivers & relevant facilities are invited to apply. Terms and conditionsapply.
              </p>
@@ -48,7 +48,7 @@
            
            <div class="single-info col-lg-12">
              <div class=" color-2">
-               <h3 class="deliveryType">Owner</h3>
+               <h3 class="deliveryType">Vehicle Owner</h3>
              </div>
              <p class="deliveryDescription">Individuals, organizations can apply to rentor lease their vehicles to generate revenue. Terms and conditions apply.</p>
              <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#vehicleOwnerModal">
@@ -58,7 +58,7 @@
 
            <div class="single-info col-lg-12">
             <div class="color-2">
-              <h3 class="deliveryType">Driver</h3>
+              <h3 class="deliveryType">Vehicle Driver</h3>
             </div>
             <p class="deliveryDescription">Individuals with a valid transport drivinglicence & experience are invited to apply. Terms and conditions apply.</p>
             <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#driverModal">
@@ -151,7 +151,7 @@
                           <input type="email" class="form-control" id="emailIdOwner">
                       </div>
                       <div class="mb-3">
-                          <label for="addressOwner" class="form-label">Area, City, Pin Code</label>
+                          <label for="addressOwner" class="form-label">Address</label>
                           <input type="text" class="form-control" id="addressOwner">
                       </div>
                       <div class="mb-3">
@@ -159,15 +159,18 @@
                           <input type="number" class="form-control" id="numberOfVehiclesOwner">
                       </div>
                       <div class="mb-3">
-                          <label for="vehicleType" class="form-label">Type of Vehicle</label>
-                          <select class="form-select" id="vehicleType" multiple>
-                              <option>Auto</option>
-                              <option>Car</option>
-                              <option>Tempo Traveller</option>
-                              <option>Bus</option>
-                              <option>Other</option>
-                          </select>
-                      </div>
+                        <label for="vehicleType" class="form-label">Type of Vehicle</label>
+                        <select class="form-select" id="vehicleType" name="vehicleType[]">
+                            <option>Auto</option>
+                            <option>Car</option>
+                            <option>Tempo Traveller</option>
+                            <option>Bus</option>
+                            <option>Bike</option>
+                            <option>Truck</option>
+                            <option>Van</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
               </div>
@@ -198,7 +201,7 @@
                           <input type="email" class="form-control" id="driverEmail">
                       </div>
                       <div class="mb-3">
-                          <label for="driverAddress" class="form-label">Area, City, Pin Code</label>
+                          <label for="driverAddress" class="form-label">Address</label>
                           <input type="text" class="form-control" id="driverAddress">
                       </div>
                       <div class="mb-3">
@@ -208,20 +211,33 @@
                               <option>No</option>
                           </select>
                       </div>
-                      <div class="mb-3">
-                          <label for="driverExperience" class="form-label">Driving Experience</label>
-                          <input type="text" class="form-control" id="driverExperience" placeholder="No. of months/years">
-                      </div>
-                      <div class="mb-3">
-                          <label for="vehicleTypeDriver" class="form-label">Type of Vehicle</label>
-                          <select class="form-select" id="driverVehicleType" multiple>
-                              <option>Auto</option>
-                              <option>Car</option>
-                              <option>Tempo Traveller</option>
-                              <option>Bus</option>
-                              <option>Other</option>
-                          </select>
-                      </div>
+                      
+                      <div id="vehicleExperienceContainer">
+                        <div class="row mb-3 vehicle-experience">
+                            <div class="col-md-6">
+                                <label for="vehicleType" class="form-label">Type of Vehicle</label>
+                                <select class="form-select" id="vehicleType" name="vehicleType[]">
+                                    <option>Auto</option>
+                                    <option>Car</option>
+                                    <option>Tempo Traveller</option>
+                                    <option>Bus</option>
+                                    <option>Bike</option>
+                                    <option>Truck</option>
+                                    <option>Van</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="driverExperience" class="form-label">Driving Experience</label>
+                                <input type="text" class="form-control" id="driverExperience" name="vehicleExperience[]" placeholder="No. of months/years">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Add More Link -->
+                    <div class="mb-3">
+                        <a href="#" id="addVehicleExperience" class="text-primary">Add another vehicle experience</a>
+                    </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
               </div>
@@ -272,6 +288,35 @@
             })
             .catch(err => console.error("Error loading header:", err));
             
+        </script>
+        <script>
+            // JavaScript to handle adding more vehicle experience inputs
+            document.getElementById('addVehicleExperience').addEventListener('click', function (e) {
+                e.preventDefault();
+        
+                // Create a new row for vehicle experience
+                const newRow = document.createElement('div');
+                newRow.classList.add('row', 'mb-3', 'vehicle-experience');
+                newRow.innerHTML = `
+                    <div class="col-md-6">
+                        <label class="form-label">Type of Vehicle</label>
+                        <select class="form-select" name="vehicleType[]">
+                            <option>Auto</option>
+                            <option>Car</option>
+                            <option>Tempo Traveller</option>
+                            <option>Bus</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Driving Experience</label>
+                        <input type="text" class="form-control" name="vehicleExperience[]" placeholder="No. of months/years">
+                    </div>
+                `;
+        
+                // Append the new row to the container
+                document.getElementById('vehicleExperienceContainer').appendChild(newRow);
+            });
         </script>
 </body>
 </html>
