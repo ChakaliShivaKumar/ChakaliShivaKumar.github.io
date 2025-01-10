@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/image.png"/>
     <script src="https://kit.fontawesome.com/280f13f5cc.js" crossorigin="anonymous"></script>
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Place favicon.ico in the root directory -->
@@ -58,7 +58,7 @@
 
            <div class="single-info col-lg-12">
             <div class="color-2">
-              <h3 class="deliveryType">Vehicle Driver</h3>
+              <h3 class="deliveryType">Lezit Driver</h3>
             </div>
             <p class="deliveryDescription">Individuals with a valid transport drivinglicence & experience are invited to apply. Terms and conditions apply.</p>
             <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#driverModal">
@@ -154,22 +154,30 @@
                           <label for="addressOwner" class="form-label">Address</label>
                           <input type="text" class="form-control" id="addressOwner">
                       </div>
-                      <div class="mb-3">
-                          <label for="numberOfVehiclesOwner" class="form-label">No. of Vehicles</label>
-                          <input type="number" class="form-control" id="numberOfVehiclesOwner">
-                      </div>
-                      <div class="mb-3">
-                        <label for="vehicleType" class="form-label">Type of Vehicle</label>
-                        <select class="form-select" id="vehicleType" name="vehicleType[]">
-                            <option>Auto</option>
-                            <option>Car</option>
-                            <option>Tempo Traveller</option>
-                            <option>Bus</option>
-                            <option>Bike</option>
-                            <option>Truck</option>
-                            <option>Van</option>
-                            <option>Other</option>
-                        </select>
+                      <div id="vehicleOwnerContainer">
+                        <div class="row mb-3 vehicle-owner">
+                            <div class="col-md-6">
+                                <label for="vehicleType" class="form-label">Type of Vehicle</label>
+                                <select class="form-select" id="vehicleType" name="vehicleType[]">
+                                    <option>Auto</option>
+                                    <option>Car</option>
+                                    <option>Tempo Traveller</option>
+                                    <option>Bus</option>
+                                    <option>Bike</option>
+                                    <option>Truck</option>
+                                    <option>Van</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="noOfVehicles" class="form-label">No. of Vehicles</label>
+                                <input type="text" class="form-control" id="noOfVehicles" name="vehicleExperience[]" placeholder="Number">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add More Link -->
+                    <div class="mb-3">
+                        <a href="#" id="addVehicleOwner" class="text-primary">Add another vehicle type</a>
                     </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
@@ -228,7 +236,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="driverExperience" class="form-label">Driving Experience</label>
+                                <label for="driverExperience" class="form-label">Driving Experience in years</label>
                                 <input type="text" class="form-control" id="driverExperience" name="vehicleExperience[]" placeholder="No. of months/years">
                             </div>
                         </div>
@@ -302,20 +310,53 @@
                         <label class="form-label">Type of Vehicle</label>
                         <select class="form-select" name="vehicleType[]">
                             <option>Auto</option>
-                            <option>Car</option>
-                            <option>Tempo Traveller</option>
-                            <option>Bus</option>
-                            <option>Other</option>
+                                    <option>Car</option>
+                                    <option>Tempo Traveller</option>
+                                    <option>Bus</option>
+                                    <option>Bike</option>
+                                    <option>Truck</option>
+                                    <option>Van</option>
+                                    <option>Other</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label">Driving Experience</label>
-                        <input type="text" class="form-control" name="vehicleExperience[]" placeholder="No. of months/years">
+                        <label class="form-label">Driving Experience in years</label>
+                        <input type="text" class="form-control" name="vehicleExperience[]" placeholder="Number">
                     </div>
                 `;
         
                 // Append the new row to the container
                 document.getElementById('vehicleExperienceContainer').appendChild(newRow);
+            });
+
+            document.getElementById('addVehicleOwner').addEventListener('click', function (e) {
+                e.preventDefault();
+        
+                // Create a new row for vehicle experience
+                const newRow = document.createElement('div');
+                newRow.classList.add('row', 'mb-3', 'vehicle-experience');
+                newRow.innerHTML = `
+                    <div class="col-md-6">
+                        <label class="form-label">Type of Vehicle</label>
+                        <select class="form-select" name="vehicleType[]">
+                            <option>Auto</option>
+                                    <option>Car</option>
+                                    <option>Tempo Traveller</option>
+                                    <option>Bus</option>
+                                    <option>Bike</option>
+                                    <option>Truck</option>
+                                    <option>Van</option>
+                                    <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">No. of Vehicles</label>
+                        <input type="text" class="form-control" name="vehicleExperience[]" placeholder="Number">
+                    </div>
+                `;
+        
+                // Append the new row to the container
+                document.getElementById('vehicleOwnerContainer').appendChild(newRow);
             });
         </script>
 </body>

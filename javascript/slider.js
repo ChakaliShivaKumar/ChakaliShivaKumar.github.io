@@ -39,17 +39,13 @@ const images = [
 
    // Custom settings
    const carousel = new bootstrap.Carousel(document.querySelector('#customCarousel'), {
-     interval: 4000, // autoplay speed in milliseconds
-     wrap: true,    // infinite scrolling
-     ride: 'carousel' // autoplay
-   });
+    interval: 20000, // Adjust autoplay interval (in milliseconds)
+    wrap: true,     // Infinite scrolling
+  });
 
    // Center mode (adjust padding)
    document.querySelectorAll('.carousel-item').forEach(item => {
      item.style.margin = '0% 10%'; // Adjust padding for center mode
    });
 
-   // Auto-scroll for center mode
-   setInterval(() => {
-     carousel.next();
-   }, 4000);
+  

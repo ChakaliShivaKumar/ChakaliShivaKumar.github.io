@@ -58,6 +58,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (vehicleOwnerForm) {
       vehicleOwnerForm.addEventListener("submit", (event) => {
         event.preventDefault();
+
+         // Get all vehicle experience rows
+         const vehicleExperienceElements = document.querySelectorAll('.vehicle-experience');
+
+         // Collect multiple vehicle types and experiences
+         const vehicleExperiences = Array.from(vehicleExperienceElements).map(row => {
+           return {
+             vehicleType: row.querySelector('select[name="vehicleType[]"]').value,
+             noOfVehicles: row.querySelector('input[name="vehicleExperience[]"]').value,
+           };
+         });
   
         const formData = {
           fullName: document.getElementById("fullNameOwner").value,
@@ -65,8 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
           email: document.getElementById("emailIdOwner").value,
           address: document.getElementById("addressOwner").value,
           additionalInfo: {
-            numberOfVehicles: document.getElementById("numberOfVehiclesOwner").value,
-            vehicleType: document.getElementById("vehicleType").value,
+            vehicles: vehicleExperiences,
           },
         };
   
@@ -78,8 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (driverForm) {
       driverForm.addEventListener("submit", (event) => {
         event.preventDefault();
-
-        const driverLicenseElement = document.getElementById("driverLicense");
   
         // Get all vehicle experience rows
         const vehicleExperienceElements = document.querySelectorAll('.vehicle-experience');
@@ -104,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         };
   
-        submitForm("https://lezit-business.onrender.com/submit-driver", formData, driverForm, "driverModal");
+        submitForm("http://localhost:3003/submit-driver", formData, driverForm, "driverModal");
       });
     }
 
