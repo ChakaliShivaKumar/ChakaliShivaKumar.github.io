@@ -40,7 +40,7 @@
 									</div>
 									<p class="deliveryDescription">Rent a vehicle for travelling long distances such as villages, tourist places, temples, long drives, other cities, towns etc (Including with driver from service provider), terms & conditions applied.
                   </p>
-                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#vehicleRentalModal">
                     Book Now
                 </button>
 								</div>
@@ -49,7 +49,7 @@
 										<h2 class="deliveryType">Vehicle Rentals - (Self-Drive)</h2>
 									</div>
 									<p class="deliveryDescription">Rent a vehicle for travelling long distances such as villages, tourist places, temples, long drives, other cities, towns etc (Driver is not included), terms & conditions applied.</p>
-                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#selfDriveRentalModal">
                     Book Now
                 </button>
 								</div>
@@ -58,7 +58,7 @@
 										<h2 class="deliveryType">Shuttle/commute transportation</h2>
 									</div>
 									<p class="deliveryDescription">Book a vehicle for people travelling regularly from one place (usually home, railway station, bus station, metro station, airports etc) to other places such as work places (educational institution, offices, companies, organisations, any other public places etc), terms & conditions applied.</p>
-                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#shuttleServiceModal">
                     Book Now
                 </button>
 								</div>
@@ -67,7 +67,7 @@
 										<h2 class="deliveryType">Drivers</h2>
 									</div>
 									<p class="deliveryDescription">Book drivers for your travel when you don’t have anyone to drive your vehicle, terms & conditions applied.</p>
-                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#driverBookingModal">
                     Book Now
                 </button>
 								</div>
@@ -76,7 +76,7 @@
 										<h2 class="deliveryType">Interstate transportation</h2>
 									</div>
 									<p class="deliveryDescription">Book a ride for any place which is outside your own state (one way trip), terms & conditions applied.</p>
-                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#interstateModal">
                     Book Now
                   </button>
 								</div>
@@ -85,7 +85,7 @@
 										<h2 class="deliveryType">Intrastate transportation</h2>
 									</div>
 									<p class="deliveryDescription">Book a ride for any place within your own state (one way trip), terms & conditions applied.</p>
-                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#bookingModal2">
+                  <button type="button" class="btn btn-primary mt-3 openModalButton" data-bs-toggle="modal" data-bs-target="#intrastateModal">
                     Book Now
                   </button>
 								</div>
@@ -99,73 +99,393 @@
     </main>
 
    <!-- Modal -->
-<div class="modal fade" id="bookingModal2" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div >
+      <!-- Vehicle Rentals (With Driver) -->
+<div class="modal fade" id="vehicleRentalModal" tabindex="-1" aria-labelledby="vehicleRentalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="bookingModalLabel">Booking Details</h5>
+        <h5 class="modal-title" id="vehicleRentalLabel">Vehicle Rentals (With Driver)</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="bookingForm">
-          <div class="mb-3">
-            <label for="deliveryTypeField" class="form-label">Delivery Type</label>
-            <input type="text" class="form-control" id="deliveryTypeField" readonly>
-          </div>
-          <!-- Full Name -->
+        <form id="vehicleRentalForm" >
           <div class="mb-3">
             <label for="customerName" class="form-label">Full Name</label>
             <input type="text" class="form-control" id="customerName" placeholder="Enter your full name" required>
           </div>
-          <!-- Mobile Number -->
           <div class="mb-3">
             <label for="mobileNumber" class="form-label">Mobile Number</label>
             <input type="tel" class="form-control" id="mobileNumber" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" required>
           </div>
-          <!-- Email ID (Optional) -->
           <div class="mb-3">
-            <label for="email" class="form-label">Email ID</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            <label for="customerEmail" class="form-label">Email ID</label>
+            <input type="email" class="form-control" id="customerEmail" placeholder="Enter your email">
           </div>
-          <!-- Pickup Details -->
+          <div class="mb-3">
+            <label for="pickupLocation" class="form-label">Pickup Location</label>
+            <input type="text" class="form-control" id="pickupLocation" placeholder="Enter pickup location" required>
+          </div>
+      
           <div class="row g-3">
             <div class="col-lg-6">
               <label for="pickupDate" class="form-label">Pickup Date</label>
               <input type="date" class="form-control" id="pickupDate" required>
             </div>
             <div class="col-lg-6">
-              <label for="pickupTime" class="form-label">Pickup Time</label>
-              <input type="time" class="form-control" id="pickupTime" required>
-            </div>
-          </div>
-          <!-- Drop Details -->
-          <div class="row g-3 mt-3">
-            <div class="col-lg-6">
               <label for="dropDate" class="form-label">Drop Date</label>
               <input type="date" class="form-control" id="dropDate" required>
+            </div>
+          </div>
+          <div class="row g-3 mt-3">
+            <div class="col-lg-6">
+              <label for="pickupTime" class="form-label">Pickup Time</label>
+              <input type="time" class="form-control" id="pickupTime" required>
             </div>
             <div class="col-lg-6">
               <label for="dropTime" class="form-label">Drop Time</label>
               <input type="time" class="form-control" id="dropTime" required>
             </div>
           </div>
-          <!-- No. of Persons -->
           <div class="mb-3 mt-3">
             <label for="numberOfPersons" class="form-label">No. of Persons</label>
             <input type="number" class="form-control" id="numberOfPersons" placeholder="Enter number of persons" min="1" required>
           </div>
-          <!-- Address Fields -->
-          <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <textarea class="form-control" id="address" rows="5" placeholder="Enter your address" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit Booking</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Vehicle Rentals (Self-Drive) -->
+<div class="modal fade" id="selfDriveRentalModal" tabindex="-1" aria-labelledby="selfDriveRentalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="selfDriveRentalLabel">Vehicle Rentals (Self-Drive)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="selfDriveRentalForm">
+          <!-- Similar to Vehicle Rentals, but terms emphasize self-drive -->
+          <div class="mb-3">
+              <label for="ScustomerName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="ScustomerName" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+              <label for="SmobileNumber" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="SmobileNumber" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" required>
+            </div>
+            <div class="mb-3">
+              <label for="ScustomerEmail" class="form-label">Email ID</label>
+              <input type="email" class="form-control" id="ScustomerEmail" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="SpickupLocation" class="form-label">Pickup Location</label>
+              <input type="text" class="form-control" id="SpickupLocation" placeholder="Enter pickup location" required>
+            </div>
+            
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <label for="SpickupDate" class="form-label">Pickup Date</label>
+                <input type="date" class="form-control" id="SpickupDate" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="SdropDate" class="form-label">Drop Date</label>
+                <input type="date" class="form-control" id="SdropDate" required>
+              </div>
+            </div>
+            <div class="row g-3 mt-3">
+              <div class="col-lg-6">
+                <label for="SpickupTime" class="form-label">Pickup Time</label>
+                <input type="time" class="form-control" id="SpickupTime" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="SdropTime" class="form-label">Drop Time</label>
+                <input type="time" class="form-control" id="SdropTime" required>
+              </div>
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="SnumberOfPersons" class="form-label">No. of Persons</label>
+              <input type="number" class="form-control" id="SnumberOfPersons" placeholder="Enter number of persons" min="1" required>
+            </div>
+          <!-- Form content remains identical for brevity -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Shuttle/Commute Transportation -->
+<div class="modal fade" id="shuttleServiceModal" tabindex="-1" aria-labelledby="shuttleServiceLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="shuttleServiceLabel">Shuttle/Commute Transportation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="shuttleServiceForm">
+          <div class="mb-3">
+              <label for="CcustomerName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="CcustomerName" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+              <label for="CmobileNumber" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="CmobileNumber" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" required>
+            </div>
+            <div class="mb-3">
+              <label for="CcustomerEmail" class="form-label">Email ID</label>
+              <input type="email" class="form-control" id="CcustomerEmail" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="CpickupLocation" class="form-label">Pickup Location</label>
+              <input type="text" class="form-control" id="CpickupLocation" placeholder="Enter pickup location" required>
+            </div>
+            <div class="mb-3">
+              <label for="CdropLocation" class="form-label">Drop Location</label>
+              <input type="text" class="form-control" id="CdropLocation" placeholder="Enter drop location" required>
+            </div>
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <label for="CpickupDate" class="form-label">Pickup Date</label>
+                <input type="date" class="form-control" id="CpickupDate" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="CdropDate" class="form-label">Drop Date</label>
+                <input type="date" class="form-control" id="CdropDate" required>
+              </div>
+            </div>
+            <div class="row g-3 mt-3">
+              <div class="col-lg-6">
+                <label for="CpickupTime" class="form-label">Pickup Time</label>
+                <input type="time" class="form-control" id="CpickupTime" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="CdropTime" class="form-label">Drop Time</label>
+                <input type="time" class="form-control" id="CdropTime" required>
+              </div>
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="CnumberOfPersons" class="form-label">No. of Persons</label>
+              <input type="number" class="form-control" id="CnumberOfPersons" placeholder="Enter number of persons" min="1" required>
+            </div>
+          <div class="mb-3">
+            <label for="periodOfService" class="form-label">Period</label>
+            <select class="form-select" id="periodOfService">
+              <option>Days</option>
+              <option>Weeks</option>
+              <option>Months</option>
+          </select>
+          </div>
+          <div class="mb-3">
+            <label for="numberOfTimes" class="form-label">No of Times</label>
+            <input type="number" class="form-control" id="numberOfTimes" placeholder="Number" required>
+          </div>
+          <!-- Include other general fields like pickup and drop locations, dates, etc. -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Drivers -->
+<div class="modal fade" id="driverBookingModal" tabindex="-1" aria-labelledby="driverBookingLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="driverBookingLabel">Drivers</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="driverBookingForm">
+          <!-- Similar fields but focused on booking a driver -->
+          <div class="mb-3">
+              <label for="DcustomerName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="DcustomerName" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+              <label for="DmobileNumber" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="DmobileNumber" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" required>
+            </div>
+            <div class="mb-3">
+              <label for="DcustomerEmail" class="form-label">Email ID</label>
+              <input type="email" class="form-control" id="DcustomerEmail" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="DpickupLocation" class="form-label">Pickup Location</label>
+              <input type="text" class="form-control" id="DpickupLocation" placeholder="Enter pickup location" required>
+            </div>
+            
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <label for="DpickupDate" class="form-label">Pickup Date</label>
+                <input type="date" class="form-control" id="DpickupDate" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="DdropDate" class="form-label">Drop Date</label>
+                <input type="date" class="form-control" id="DdropDate" required>
+              </div>
+            </div>
+            <div class="row g-3 mt-3">
+              <div class="col-lg-6">
+                <label for="DpickupTime" class="form-label">Pickup Time</label>
+                <input type="time" class="form-control" id="DpickupTime" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="DdropTime" class="form-label">Drop Time</label>
+                <input type="time" class="form-control" id="DdropTime" required>
+              </div>
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="DvehicleType" class="form-label">Type of Vehicle</label>
+              <select class="form-select" id="DvehicleType" name="vehicleType[]">
+                  <option>Bike</option>
+                  <option>Auto</option>
+                  <option>Car</option>
+                  <option>Tempo Traveller</option>
+                  <option>Bus</option>
+                  <option>Truck</option>
+                  <option>Van</option>
+                  <option>Other</option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Interstate Transportation -->
+<div class="modal fade" id="interstateModal" tabindex="-1" aria-labelledby="interstateLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="interstateLabel">Interstate Transportation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="interstateForm">
+          <!-- Fields similar to Vehicle Rentals -->
+          <div class="mb-3">
+              <label for="IntercustomerName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="IntercustomerName" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+              <label for="IntermobileNumber" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="IntermobileNumber" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" required>
+            </div>
+            <div class="mb-3">
+              <label for="IntercustomerEmail" class="form-label">Email ID</label>
+              <input type="email" class="form-control" id="IntercustomerEmail" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="InterpickupLocation" class="form-label">Pickup Location</label>
+              <input type="text" class="form-control" id="InterpickupLocation" placeholder="Enter pickup location" required>
+            </div>
+            <div class="mb-3">
+              <label for="InterdropLocation" class="form-label">Drop Location</label>
+              <input type="text" class="form-control" id="InterdropLocation" placeholder="Enter drop location" required>
+            </div>
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <label for="InterpickupDate" class="form-label">Pickup Date</label>
+                <input type="date" class="form-control" id="InterpickupDate" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="InterdropDate" class="form-label">Drop Date</label>
+                <input type="date" class="form-control" id="InterdropDate" required>
+              </div>
+            </div>
+            <div class="row g-3 mt-3">
+              <div class="col-lg-6">
+                <label for="InterpickupTime" class="form-label">Pickup Time</label>
+                <input type="time" class="form-control" id="InterpickupTime" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="InterdropTime" class="form-label">Drop Time</label>
+                <input type="time" class="form-control" id="InterdropTime" required>
+              </div>
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="InternumberOfPersons" class="form-label">No. of Persons</label>
+              <input type="number" class="form-control" id="InternumberOfPersons" placeholder="Enter number of persons" min="1" required>
+            </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Intrastate Transportation -->
+<div class="modal fade" id="intrastateModal" tabindex="-1" aria-labelledby="intrastateLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="intrastateLabel">Intrastate Transportation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="intrastateForm">
+          <!-- Fields similar to Vehicle Rentals -->
+          <div class="mb-3">
+              <label for="IntracustomerName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="IntracustomerName" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+              <label for="IntramobileNumber" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="IntramobileNumber" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" required>
+            </div>
+            <div class="mb-3">
+              <label for="IntracustomerEmail" class="form-label">Email ID</label>
+              <input type="email" class="form-control" id="IntracustomerEmail" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="IntrapickupLocation" class="form-label">Pickup Location</label>
+              <input type="text" class="form-control" id="IntrapickupLocation" placeholder="Enter pickup location" required>
+            </div>
+            <div class="mb-3">
+              <label for="IntradropLocation" class="form-label">Drop Location</label>
+              <input type="text" class="form-control" id="IntradropLocation" placeholder="Enter drop location" required>
+            </div>
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <label for="IntrapickupDate" class="form-label">Pickup Date</label>
+                <input type="date" class="form-control" id="IntrapickupDate" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="IntradropDate" class="form-label">Drop Date</label>
+                <input type="date" class="form-control" id="IntradropDate" required>
+              </div>
+            </div>
+            <div class="row g-3 mt-3">
+              <div class="col-lg-6">
+                <label for="IntrapickupTime" class="form-label">Pickup Time</label>
+                <input type="time" class="form-control" id="IntrapickupTime" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="IntradropTime" class="form-label">Drop Time</label>
+                <input type="time" class="form-control" id="IntradropTime" required>
+              </div>
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="IntranumberOfPersons" class="form-label">No. of Persons</label>
+              <input type="number" class="form-control" id="IntranumberOfPersons" placeholder="Enter number of persons" min="1" required>
+            </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
 
 
 		<!-- ========================= search-section end ========================= -->
@@ -184,14 +504,14 @@
         <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-        <script src="./javascript/bookingForm.js"></script>
+    <script src="./javascript/pTransportBooking.js"></script>
 
-        <!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Popper.js -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
         <script>

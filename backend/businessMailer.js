@@ -12,10 +12,12 @@ app.use(bodyParser.json());
 
 // Nodemailer configuration
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: 'smtppro.zoho.in', // Zoho SMTP server
+  port: 465,            // Use 465 for SSL
+  secure: true,         // True for SSL/TLS
   auth: {
-    user: "capshiv51@gmail.com", // Replace with your email
-    pass: "brua nvha nnwn cabi",  // Replace with your email password or app password
+    user: "bookings@lezittransports.com", // Replace with your email
+    pass: "SjM7 S2RA 9AxH", // Replace with your email password or app password
   },
 });
 
@@ -25,8 +27,8 @@ app.post("/submit-service-provider", (req, res) => {
 
   // Admin email options
   const adminMailOptions = {
-    from: "satishavula0408@outlook.com",
-    to: "satishavula0408@outlook.com",
+    from: "bookings@lezittransports.com",
+    to: "info@lezittransports.com",
     subject: `New Service Provider Application: ${fullName}`,
     text: `Satish, you have received a new Service Provider application:
 
@@ -43,7 +45,7 @@ Thank you!`,
 
   // Customer acknowledgment email
   const customerMailOptions = {
-    from: "satishavula0408@outlook.com",
+    from: "bookings@lezittransports.com",
     to: email,
     subject: "Service Provider Application Submission Confirmation",
     text: `Dear ${fullName},
@@ -71,8 +73,8 @@ app.post("/submit-vehicle-owner", (req, res) => {
 
   // Admin email options
   const adminMailOptions = {
-    from: "satishavula0408@outlook.com",
-    to: "satishavula0408@outlook.com",
+    from: "info@lezittransports.com",
+    to: "info@lezittransports.com",
     subject: `New Vehicle Owner Application: ${fullName}`,
     text: `Satish, you have received a new Vehicle Owner application:
 
@@ -88,7 +90,7 @@ Thank you!`,
 
   // Customer acknowledgment email
   const customerMailOptions = {
-    from: "satishavula0408@outlook.com",
+    from: "bookings@lezittransports.com",
     to: email,
     subject: "Vehicle Owner Application Submission Confirmation",
     text: `Dear ${fullName},
@@ -116,8 +118,8 @@ app.post("/submit-driver", (req, res) => {
 
   // Admin email options
   const adminMailOptions = {
-    from: "satishavula0408@outlook.com",
-    to: "satishavula0408@outlook.com",
+    from: "bookings@lezittransports.com",
+    to: "info@lezittransports.com",
     subject: `New Driver Application: ${fullName}`,
     text: `Satish, you have received a new Driver application:
 
@@ -133,7 +135,7 @@ Thank you!`,
 
   // Customer acknowledgment email
   const customerMailOptions = {
-    from: "satishavula0408@outlook.com",
+    from: "bookings@lezittransports.com",
     to: email,
     subject: "Driver Application Submission Confirmation",
     text: `Dear ${fullName},

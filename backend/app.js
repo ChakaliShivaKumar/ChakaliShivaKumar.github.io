@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3005;
 
 
 // Middleware
@@ -13,32 +13,36 @@ app.use(bodyParser.json());
 
 // Nodemailer configuration
 const transporter = nodemailer.createTransport({
-  service: "gmail", // Use your email provider (e.g., Outlook, Yahoo, etc.)
+  host: 'smtppro.zoho.in', // Zoho SMTP server
+  port: 465,            // Use 465 for SSL
+  secure: true,         // True for SSL/TLS
   auth: {
-    user: "capshiv51@gmail.com", // Replace with your email
-    pass: "brua nvha nnwn cabi", // Replace with your email password or app password
+    user: "bookings@lezittransports.com", // Replace with your email
+    pass: "SjM7 S2RA 9AxH", // Replace with your email password or app password
   },
 });
 
 // API endpoint for sending emails
-app.post("/send-email", (req, res) => {
+app.post("/send-email-shuttle", (req, res) => {
   const {
     type,
     name,
     contact,
     email,
+    pickupLocation,
     pickupDate,
     pickupTime,
     dropDate,
     dropTime,
     persons,
-    address,
+    periodOfService,
+    numberOfTimes
   } = req.body;
 
 
   const adminMailOptions = {
-    from: "satishavula0408@outlook.com",
-    to: "satishavula0408@outlook.com", // Replace with admin's email
+    from: "bookings@lezittransports.com",
+    to: "info@lezittransports.com", // Replace with admin's email
     subject: `New Booking: ${type}`,
     text: `
       A new booking has been made:
@@ -47,14 +51,16 @@ app.post("/send-email", (req, res) => {
       - Pickup Date & Time: ${pickupDate} at ${pickupTime}
       - Drop Date & Time: ${dropDate} at ${dropTime}
       - No. of Persons: ${persons}
-      - Address: ${address}
+      - pickupLocation: ${pickupLocation}
       - Contact Number: ${contact}
       - Email: ${email || "Not Provided"}
+      - Period Of Service : ${periodOfService}
+      - Number Of Times : ${numberOfTimes}
     `,
   };
 
   const customerMailOptions = {
-    from: "satishavula0408@outlook.com",
+    from: "bookings@lezittransports.com",
     to: email,
     subject: "Booking Confirmation",
     text: `
@@ -65,7 +71,150 @@ app.post("/send-email", (req, res) => {
       - Pickup Date & Time: ${pickupDate} at ${pickupTime}
       - Drop Date & Time: ${dropDate} at ${dropTime}
       - No. of Persons: ${persons}
-      - Address: ${address}
+      - pickupLocation: ${pickupLocation}
+      - Contact Number: ${contact}
+      - Period Of Service : ${periodOfService}
+      - Number Of Times : ${numberOfTimes}
+      
+      We will process your request shortly.
+      
+      Regards,
+      LEZIT TRANSPORTS
+    `,
+  };
+
+  // Send emails to both admin and customer
+  Promise.all([
+    transporter.sendMail(adminMailOptions),
+    transporter.sendMail(customerMailOptions),
+  ])
+    .then(() => {
+      res.status(200).send("Emails sent successfully!");
+    })
+    .catch((error) => {
+      console.error("Error sending email:", error);
+      res.status(500).send("Failed to send emails.");
+    });
+});
+
+
+
+
+app.post("/send-email", (req, res) => {
+  const {
+    type,
+    name,
+    contact,
+    email,
+    pickupLocation,
+    pickupDate,
+    pickupTime,
+    dropDate,
+    dropTime,
+    persons,
+  } = req.body;
+
+
+
+  const adminMailOptions = {
+    from: "bookings@lezittransports.com",
+    to: "info@lezittransports.com", // Replace with admin's email
+    subject: `New Booking: ${type}`,
+    text: `
+      A new booking has been made:
+      - Name: ${name}
+      - Booking Type: ${type}
+      - Pickup Date & Time: ${pickupDate} at ${pickupTime}
+      - Drop Date & Time: ${dropDate} at ${dropTime}
+      - No. of Persons: ${persons}
+      - pickupLocation: ${pickupLocation}
+      - Contact Number: ${contact}
+      - Email: ${email || "Not Provided"}
+    `,
+  };
+
+  const customerMailOptions = {
+    from: "bookings@lezittransports.com",
+    to: email,
+    subject: "Booking Confirmation",
+    text: `
+      Dear ${name},
+      
+      Thank you for your booking!
+      - Booking Type: ${type}
+      - Pickup Date & Time: ${pickupDate} at ${pickupTime}
+      - Drop Date & Time: ${dropDate} at ${dropTime}
+      - No. of Persons: ${persons}
+      - pickupLocation: ${pickupLocation}
+      - Contact Number: ${contact}
+      
+      We will process your request shortly.
+      
+      Regards,
+      LEZIT TRANSPORTS
+    `,
+  };
+
+  // Send emails to both admin and customer
+  Promise.all([
+    transporter.sendMail(adminMailOptions),
+    transporter.sendMail(customerMailOptions),
+  ])
+    .then(() => {
+      res.status(200).send("Emails sent successfully!");
+    })
+    .catch((error) => {
+      console.error("Error sending email:", error);
+      res.status(500).send("Failed to send emails.");
+    });
+});
+
+app.post("/send-email-driver", (req, res) => {
+  const {
+    type,
+    name,
+    contact,
+    email,
+    pickupLocation,
+    pickupDate,
+    pickupTime,
+    dropDate,
+    dropTime,
+    vehicleType,
+  } = req.body;
+
+
+
+  const adminMailOptions = {
+    from: "bookings@lezittransports.com",
+    to: "info@lezittransports.com", // Replace with admin's email
+    subject: `New Booking: ${type}`,
+    text: `
+      A new booking has been made:
+      - Name: ${name}
+      - Booking Type: ${type}
+      - Pickup Date & Time: ${pickupDate} at ${pickupTime}
+      - Drop Date & Time: ${dropDate} at ${dropTime}
+      - Vehicle Type: ${vehicleType}
+      - pickupLocation: ${pickupLocation}
+      - Contact Number: ${contact}
+      - Email: ${email || "Not Provided"}
+    `,
+  };
+
+  const customerMailOptions = {
+    from: "bookings@lezittransports.com",
+    to: email,
+    subject: "Booking Confirmation",
+    text: `
+      Dear ${name},
+      
+      Thank you for your booking!
+      - Booking Type: ${type}
+      - Pickup Date & Time: ${pickupDate} at ${pickupTime}
+      - Drop Date & Time: ${dropDate} at ${dropTime}
+      - Vehicle Type: ${vehicleType}
+      - pickupLocation: ${pickupLocation}
       - Contact Number: ${contact}
       
       We will process your request shortly.
@@ -90,6 +239,6 @@ app.post("/send-email", (req, res) => {
 });
 
 // Start server
-app.listen("3000", () => {
+app.listen("3005", () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

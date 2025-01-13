@@ -12,10 +12,12 @@ app.use(bodyParser.json());
 
 // Nodemailer configuration
 const transporter = nodemailer.createTransport({
-  service: "gmail", // Use your email provider (e.g., Outlook, Yahoo, etc.)
+  host: 'smtppro.zoho.in', // Zoho SMTP server
+  port: 465,            // Use 465 for SSL
+  secure: true,         // True for SSL/TLS
   auth: {
-    user: "capshiv51@gmail.com", // Replace with your email
-    pass: "brua nvha nnwn cabi", // Replace with your email password or app password
+    user: "support@lezittransports.com", // Replace with your email
+    pass: "Tnep EGzb eX05", // Replace with your email password or app password
   },
 });
 
@@ -25,8 +27,8 @@ app.post("/send-query", (req, res) => {
   
     // Admin email options
     const adminMailOptions = {
-      from: "satishavula0408@outlook.com",
-      to: "satishavula0408@outlook.com", 
+      from: "support@lezittransports.com",
+      to: "info@lezittransports.com", 
       subject: `New Query Submission: ${fullName}`,
       text: `
         A new query has been submitted:
@@ -42,7 +44,7 @@ app.post("/send-query", (req, res) => {
 
     // Acknowledgment email for the user
     const customerMailOptions = {
-      from: "satishavula0408@outlook.com",
+      from: "support@lezittransports.com",
       to: email,
       subject: "Query Submission Confirmation",
       text: `
