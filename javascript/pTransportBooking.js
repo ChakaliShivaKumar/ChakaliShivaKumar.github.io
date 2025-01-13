@@ -6,6 +6,55 @@ document.addEventListener("DOMContentLoaded", () => {
     const interstateForm = document.getElementById("interstateForm");
     const intrastateForm = document.getElementById("intrastateForm");
 
+
+    // Listen for changes on the pickupTime input field
+  const pickupTimeInput = document.getElementById("pickupTime");
+  
+  pickupTimeInput.addEventListener("input", function () {
+    const time = pickupTimeInput.value;
+    const roundedTime = roundTimeToNearestInterval(time);
+    
+    // Set the value of the input to the rounded time (to nearest 15-minute interval)
+    pickupTimeInput.value = roundedTime;
+  });
+  
+  // Listen for changes on the pickupTime input field
+  const dropTimeInput = document.getElementById("dropTime");
+  
+  dropTimeInput.addEventListener("input", function () {
+    const time = dropTimeInput.value;
+    const roundedTime = roundTimeToNearestInterval(time);
+    
+    // Set the value of the input to the rounded time (to nearest 15-minute interval)
+    dropTimeInput.value = roundedTime;
+  });
+  
+  
+    //Validations for date
+    const pickupDateInput = document.getElementById("pickupDate");
+    const dropDateInput = document.getElementById("dropDate");
+  
+    // Ensure the pickup date cannot be before today
+    const today = new Date().toISOString().split("T")[0];
+    pickupDateInput.setAttribute("min", today);
+  
+    pickupDateInput.addEventListener("change", () => {
+      // Ensure drop date is after pickup date
+      const pickupDate = pickupDateInput.value;
+      dropDateInput.setAttribute("min", pickupDate);
+    });
+  
+    dropDateInput.addEventListener("change", () => {
+      const pickupDate = pickupDateInput.value;
+      const dropDate = dropDateInput.value;
+  
+      if (new Date(dropDate) <= new Date(pickupDate)) {
+        alert("Drop date must be after the pickup date.");
+        dropDateInput.value = ""; // Clear invalid date
+      }
+    });
+  
+
     // vehicleRentalForm submission
     if (vehicleRentalForm) {
         vehicleRentalForm.addEventListener("submit", async (event) => {
@@ -21,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             pickupTime: document.getElementById("pickupTime").value.trim(),
             dropDate: document.getElementById("dropDate").value.trim(),
             dropTime: document.getElementById("dropTime").value.trim(),
-            ppersons: document.getElementById("numberOfPersons").value,
+            persons: document.getElementById("numberOfPersons").value,
           };
 
 

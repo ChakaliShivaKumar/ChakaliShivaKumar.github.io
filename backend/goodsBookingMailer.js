@@ -13,10 +13,12 @@ app.use(bodyParser.json());
 
 // Nodemailer configuration
 const transporter = nodemailer.createTransport({
-  service: "gmail", // Use your email provider (e.g., Outlook, Yahoo, etc.)
+  host: 'smtppro.zoho.in', // Zoho SMTP server
+  port: 465,            // Use 465 for SSL
+  secure: true,         // True for SSL/TLS
   auth: {
-    user: "capshiv51@gmail.com", // Replace with your email
-    pass: "brua nvha nnwn cabi", // Replace with your email password or app password
+    user: "bookings@lezittransports.com", // Replace with your email
+    pass: "SjM7 S2RA 9AxH", // Replace with your email password or app password
   },
 });
 
@@ -38,8 +40,8 @@ app.post("/send-email", (req, res) => {
 
 
   const adminMailOptions = {
-    from: "satishavula0408@outlook.com",
-    to: "satishavula0408@outlook.com", // Replace with admin's email
+    from: "bookings@lezittransports.com",
+    to: "info@lezittransports.com", // Replace with admin's email
     subject: `New Booking: ${type}`,
     text: `
       A new booking has been made:
@@ -56,7 +58,7 @@ app.post("/send-email", (req, res) => {
   };
 
   const customerMailOptions = {
-    from: "satishavula0408@outlook.com",
+    from: "bookings@lezittransports.com",
     to: email,
     subject: "Booking Confirmation",
     text: `
