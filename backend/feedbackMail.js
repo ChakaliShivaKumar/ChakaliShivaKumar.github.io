@@ -2,6 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require('dotenv').config();
 
 const app = express();
 const PORT = 3001;
@@ -12,12 +13,12 @@ app.use(bodyParser.json());
 
 // Nodemailer configuration
 const transporter = nodemailer.createTransport({
-  host: 'smtppro.zoho.in', // Zoho SMTP server
-  port: 465,            // Use 465 for SSL
-  secure: true,         // True for SSL/TLS
+  host: process.env.SMTP_HOST, 
+  port: process.env.SMTP_PORT,
+  secure: true,        
   auth: {
-    user: "support@lezittransports.com", // Replace with your email
-    pass: "Tnep EGzb eX05", // Replace with your email password or app password
+    user: process.env.SMTP_USER_SUPPORT, 
+    pass: process.env.SMTP_PASS_SUPPORT, 
   },
 });
 
