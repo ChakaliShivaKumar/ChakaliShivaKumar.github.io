@@ -50,7 +50,7 @@ app.post("/send-query", (req, res) => {
       text: `
         Dear ${fullName},
         
-        Thank you for reaching out to us. We have received your query and will get back to you shortly.
+        Thank you for reaching out to us. We have received your query.
         - Transportation Type: ${transportationType}
         - Service Type: ${serviceType}
         - Query: ${query}

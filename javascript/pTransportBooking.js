@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
           try {
-            const response = await fetch("https://p-transportsbooking.onrender.com/send-email", {
+            const response = await fetch("https://chakalishivakumar-github-io.onrender.com/send-email", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
           try {
-            const response = await fetch("https://p-transportsbooking.onrender.com/send-email", {
+            const response = await fetch("https://chakalishivakumar-github-io.onrender.com/send-email", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
           try {
-            const response = await fetch("https://p-transportsbooking.onrender.com/send-email-shuttle", {
+            const response = await fetch("https://chakalishivakumar-github-io.onrender.com/send-email-shuttle", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
           try {
-            const response = await fetch("https://p-transportsbooking.onrender.com/send-email-driver", {
+            const response = await fetch("https://chakalishivakumar-github-io.onrender.com/send-email-driver", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
           try {
-            const response = await fetch("https://p-transportsbooking.onrender.com/send-email", {
+            const response = await fetch("https://chakalishivakumar-github-io.onrender.com/send-email", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
           try {
-            const response = await fetch("https://p-transportsbooking.onrender.com/send-email", {
+            const response = await fetch("https://chakalishivakumar-github-io.onrender.com/send-email", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -280,5 +280,4 @@ document.addEventListener("DOMContentLoaded", () => {
         
     }
 
-    // Add similar event listeners for other forms (selfDriveRentalForm, shuttleServiceForm, etc.)
 });

@@ -50,7 +50,7 @@ app.post("/send-feedback", (req, res) => {
       text: `
         Dear ${fullName},
         
-        Thank you for reaching out to us. We have received your feedback and will get back to you shortly.
+        Thank you for reaching out to us. We have received your feedback.
         - Transportation Type: ${transportationType}
         - Service Type: ${serviceType}
         - feedback: ${feedback}
