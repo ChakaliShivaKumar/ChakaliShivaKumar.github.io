@@ -29,6 +29,8 @@ app.post("/send-email", (req, res) => {
     name,
     contact,
     email,
+    goodsPickupLocation,
+    goodsDropLocation,
     pickupDate,
     pickupTime,
     dropDate,
@@ -47,6 +49,8 @@ app.post("/send-email", (req, res) => {
       A new booking has been made:
       - Name: ${name}
       - Booking Type: ${type}
+      - Pickup Location : ${goodsPickupLocation}
+      - Drop Location : ${goodsDropLocation}
       - Pickup Date & Time: ${pickupDate} at ${pickupTime}
       - Drop Date & Time: ${dropDate} at ${dropTime}
       - No. of Persons: ${persons}
@@ -66,6 +70,8 @@ app.post("/send-email", (req, res) => {
       
       Thank you for your booking!
       - Booking Type: ${type}
+      - Pickup Location : ${goodsPickupLocation}
+      - Drop Location : ${goodsDropLocation}
       - Pickup Date & Time: ${pickupDate} at ${pickupTime}
       - Drop Date & Time: ${dropDate} at ${dropTime}
       - No. of Goods: ${persons}

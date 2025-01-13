@@ -97,7 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const dropTime = document.getElementById("dropTime").value.trim();
       const persons = document.getElementById("numberOfPersons").value.trim();
       const weight = document.getElementById("weight").value.trim();
-      const fullAddress = document.getElementById("address").value.trim();
+      const goodsPickupLocation = document.getElementById("goodsPickupLocation").value.trim();
+      const goodsDropLocation = document.getElementById("goodsDropLocation").value.trim();
       const contactNumber = document.getElementById("mobileNumber").value.trim();
   
       // Validate fields
@@ -109,7 +110,9 @@ document.addEventListener("DOMContentLoaded", () => {
         !dropTime ||
         !fullAddress ||
         !weight ||
-        !contactNumber
+        !contactNumber ||
+        goodsPickupLocation ||
+        goodsDropLocation
       ) {
         alert("Please fill out all required fields.");
         return;
@@ -120,13 +123,14 @@ document.addEventListener("DOMContentLoaded", () => {
         name: customerName,
         contact: contactNumber,
         email: customerEmail,
+        goodsPickupLocation,
+        goodsDropLocation,
         pickupDate,
         pickupTime,
         dropDate,
         dropTime,
         persons,
         weight: weight,
-        address: fullAddress,
       };
   
   

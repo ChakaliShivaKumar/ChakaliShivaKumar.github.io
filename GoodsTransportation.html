@@ -85,6 +85,15 @@
             <label for="email" class="form-label">Email ID</label>
             <input type="email" class="form-control" id="email" placeholder="Enter your email">
           </div>
+          <!-- Address Fields -->
+          <div class="mb-3">
+            <label for="goodsPickupLocation" class="form-label">Pickup Location</label>
+            <textarea class="form-control" id="goodsPickupLocation" rows="1" placeholder="Enter full address" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="goodsDropLocation" class="form-label">Delivery Location</label>
+            <textarea class="form-control" id="goodsDropLocation" rows="1" placeholder="Enter full address" required></textarea>
+          </div>
           <!-- Pickup Details -->
           <div class="row g-3">
             <div class="col-lg-6">
@@ -117,11 +126,7 @@
             <label for="weight" class="form-label">Weight</label>
             <input type="text" class="form-control" id="weight" placeholder="Enter weight" required>
           </div>
-          <!-- Address Fields -->
-          <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <textarea class="form-control" id="address" rows="5" placeholder="Enter your address" required></textarea>
-          </div>
+          
           <button type="submit" class="btn btn-primary">Submit Booking</button>
         </form>
       </div>
