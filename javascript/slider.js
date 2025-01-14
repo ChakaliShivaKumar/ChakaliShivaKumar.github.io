@@ -3,7 +3,7 @@ const images = [
     "assets/img/posters/Our services 1st poster (31-8-24).jpg",
     "assets/img/posters/Why with us poster (4-9-24).jpg",
     "assets/img/posters/Vehicle rentals (with driver) poster.jpg",
-    "assets/img/posters/poster4.png",
+    "assets/img/posters/company card.png",
     "assets/img/posters/poster5.png",
     "assets/img/posters/poster6.png"
   ];

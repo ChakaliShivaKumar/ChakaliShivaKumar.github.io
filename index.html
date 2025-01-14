@@ -66,9 +66,8 @@
 	<!-- ========================= header start ========================= -->
   <div id="header"></div>
     <!-- ========================= header end ========================= -->
-
     <!-- ========================= hero-section start ========================= -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section ">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
@@ -79,20 +78,22 @@
               <p class="wow fadeInUp pb-5 text-right mb-0" data-wow-delay=".4s">
                 ....a transportation hub
 			        </p>
-			
-              <div class="hero-btns">
-								<!-- <a href="https://rebrand.ly/appgrids-gg/" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Purchase Now</a>
-								<a href="https://rebrand.ly/appgrids-gg/" class="main-btn border-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Learn More</a> -->
-							</div>
+              <div class="ml-3">
+                <i class="fa-solid fa-location-pin fa-beat me-4"></i>
+                <span >Hyderabad</span>
+              </div>
             </div>
-            <p class="tag-line pt-5 pl-3 mt-2" data-wow-delay=".4s">
+            <p class="tag-line pt-5 pl-3 mb-4" data-wow-delay=".4s">
               "One stop solution for all your transportation purposes!"
             </p>
+            
+            <button type="button" class="btn btn-outline-secondary mr-2 mb-2 pt-btn">Vehicle Rentals - (With Driver)</button><button type="button" class="btn btn-outline-secondary mr-2 mb-2 pt-btn">Vehicle Rentals - (Self-Drive)</button><button type="button" class="btn btn-outline-secondary mr-2 mb-2 pt-btn">Shuttle/commute transportation</button><button type="button" class="btn btn-outline-secondary mr-2 mb-2 pt-btn">Drivers</button><button type="button" class="btn btn-outline-secondary mr-2 mb-2 pt-btn">Interstate transportation</button><button type="button" class="btn btn-outline-secondary mr-2 mb-2 pt-btn">Intrastate transportation</button><button type="button" class="btn btn-outline-secondary mr-2 mb-2 gt-btn">Logistics</button><button type="button" class="btn btn-outline-secondary mr-2 mb-2 gt-btn">Order Delivery</button>
 					</div>
 					<div class="col-lg-6">
 						<div class="hero-img wow fadeInUp" data-wow-delay=".5s">
 							<img src="assets/img/hero/hero-img.png" alt="">
 						</div>
+            
 					</div>
         </div>
 			</div>
@@ -152,6 +153,25 @@
 
         myDiv.addEventListener('click', function() {
           window.location.href = 'https://www.lezittransports.com/Media.html';
+        });
+
+
+        const pbutns = document.querySelectorAll(".pt-btn");
+  
+        pbutns.forEach((pbutn) => {
+          pbutn.addEventListener("click", (event) => {
+            window.location.href = "https://www.lezittransports.com/PersonTransportation.html";
+      
+          });
+        });
+
+        const gbutns = document.querySelectorAll(".gt-btn");
+  
+        gbutns.forEach((gbutn) => {
+          gbutn.addEventListener("click", (event) => {
+            window.location.href = "https://www.lezittransports.com/GoodsTransportation.html";
+
+          });
         });
     </script>
   </body>
