@@ -17,8 +17,8 @@ const transporter = nodemailer.createTransport({
   port: process.env.SMTP_PORT,
   secure: true,        
   auth: {
-    user: process.env.SMTP_USER_SUPPORT, 
-    pass: process.env.SMTP_PASS_SUPPORT, 
+    user: "support@lezittransports.com", // Replace with your email
+    pass: "gNtw cPkf X5YF",
   },
 });
 

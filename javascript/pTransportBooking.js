@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
           try {
-            const response = await fetch("https://chakalishivakumar-github-io.onrender.com/send-email", {
+            const response = await fetch("http://localhost:3005/send-email", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
